@@ -34,11 +34,11 @@ module.exports.userUpdated = (req, res) => {
     console.log(newData);
     // const { gender, name, contuct, address, photoUrl } = req.body
     const isExist = users.find(user => user.id == Number(id))
-    isExist.gender = newData.gender;
-    isExist.name = newData?.name;
-    isExist.contuct = newData?.contuct;
-    isExist.address = newData.address;
-    isExist.photoUrl = newData.photoUrl;
+    isExist.gender = newData.gender || isExist.gender;
+    isExist.name = newData?.name || isExist.name;
+    isExist.contuct = newData?.contuct || isExist.contuct;
+    isExist.address = newData.address || isExist.address;
+    isExist.photoUrl = newData.photoUrl || isExist.photoUrl;
 
     res.send(isExist)
 
@@ -58,8 +58,6 @@ module.exports.userBulkUpdate = (req, res) => {
     filter.photoUrl = data.photoUrl || filter.photoUrl;
     res.send(filter)
 }
-
-
 
 
 module.exports.userDeleted = (req, res) => {

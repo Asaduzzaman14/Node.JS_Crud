@@ -15,7 +15,7 @@ router.route("/save").post(userController.userSaved)
 
 router.route("/update/:id").patch(userController.userUpdated)
 
-router.route("/bulk-update").patch(userController.userBulkUpdate)
+router.route("/bulk-update/:id").patch(userController.userBulkUpdate)
 
 // 
 router.route("/delete/:id").delete(userController.userDeleted)
