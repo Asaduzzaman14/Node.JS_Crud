@@ -49,7 +49,7 @@ module.exports.userUpdated = (req, res) => {
 module.exports.userBulkUpdate = (req, res) => {
     const { id } = req.params
     const data = req.body;
-    const filter = user.find(use => use.id === Number(id));
+    const filter = users.find(use => use.id === Number(id));
     filter.name = data.id || filter.id;
     filter.gender = data.gender || filter.gender;
     filter.name = data.name || filter.name;
